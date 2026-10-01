@@ -47,8 +47,22 @@ function parseMessage(message) {
 }
 
 function turnOn(brightness) {
+    //timer off if new bewgeging detected
+    if (lampOffTimer !== null) {
+        clearTimeout(lampOffTimer)
+    }
     console.log(`Lamp aan met lichtsterkte: ${brightness}%`)
+    //turn timer on for 5 sec to turn off lamp
+    lampOffTimer = setTimeout(() => {
+        console.log("5 seconden voorbij, lamp gaat uit")
+        turnOff()
+    },5000);
 }
+
+
+// function turnOn(brightness) {
+//     console.log(`Lamp aan met lichtsterkte: ${brightness}%`)
+// }
 
 function turnOff() {
     console.log("Lamp uit")

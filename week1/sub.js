@@ -6,7 +6,7 @@ function onConnect(){
     console.log("Connected to MQTT broker");
     onSubscribe(mqttTopic)
 }
-
+    
 function onSubscribe(topic){
     mqttClient.subscribe(topic)
     console.log(`Subscribed to topic: ${topic}`);

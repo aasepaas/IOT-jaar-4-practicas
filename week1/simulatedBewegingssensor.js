@@ -8,6 +8,8 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+let offTimer = null;
+
 function onConnect(){
     console.log("Connected to MQTT broker");
 }
@@ -51,14 +53,20 @@ function onEnterPress(input){
         message.brightness = 75
     }else if (input == "4"){
         message.brightness = 100
+    }else{
+        console.log("Invalid input");
+        return;
     }
     publishMessage(topicName, JSON.stringify(message))
     //after 5 sec lamp uit 
+    /*if (offTimer) {
+        clearTimeout(offTimer);
+    }
     message.status = false
     message.brightness = 0
-    setTimeout(() => {
+    offTimer = setTimeout(() => {
         publishMessage(topicName, JSON.stringify(message))
-    }, 5000); 
+    }, 5000);*/ 
   }
 }
 

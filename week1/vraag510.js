@@ -9,7 +9,6 @@ function answerHandler(answer){
 	    rl.close();
 	    process.exit(1);
 	  }
-
 }
 
 rl.on('line', answerHandler);
