@@ -119,7 +119,7 @@ function parseMessage(message) {
     try {
         const JSONmsg = JSON.parse(message.toString())
         if (!validateMessage(JSONmsg)) {
-            console.log("Ongeldig alarmlicht bericht")
+            console.log("Ongeldig alarmlicht bericht, namelijk ", JSONmsg)
             return
         }
         interval = JSONmsg.interval

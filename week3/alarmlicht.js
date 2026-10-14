@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const chalk = require('chalk');
 const Protocol = require('azure-iot-device-mqtt').Mqtt;
-const Client = require('azure-iot-device').Client;
+const Client = require('azure-iot-device').Client;````
 
 // Device connection string uit de environment (niet hardcoden i.v.m. security)
 const deviceConnectionString = process.env.IOTHUB_DEVICE_CONNECTION_STRING_Alarmlicht;
